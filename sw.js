@@ -5,8 +5,6 @@ const ASSETS_TO_CACHE = [
     './styles.css',
     './app.js',
     './manifest.json',
-    'https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap',
-    'https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css'
 ];
 
 // 1. Install Event: Saves the assets to the phone's storage
