@@ -1,0 +1,206 @@
+/* 1. Variables and Reset */
+:root {
+    --primary-blue: #1a365d;
+    --accent-blue: #2b6cb0;
+    --bg-light: #f7fafc;
+    --text-main: #2d3748;
+    --white: #ffffff;
+    --border-color: #e2e8f0;
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: 'Poppins', sans-serif;
+    background-color: var(--bg-light);
+    color: var(--text-main);
+    line-height: 1.6;
+}
+
+.wrap {
+    max-width: 600px;
+    margin: 0 auto;
+    padding-bottom: 2rem;
+}
+
+/* 2. Header */
+.nav-bar {
+    padding: 2rem 1rem 1rem;
+    background: var(--white);
+    border-bottom: 1px solid var(--border-color);
+    text-align: center;
+}
+
+.app-title {
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--primary-blue);
+}
+
+/* 3. Grid and Cards */
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem; /* Tighter gap for accordion look */
+    padding: 1.5rem 1rem;
+}
+
+.card {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    background: var(--white);
+    padding: 1.25rem;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.2s ease;
+    border: 1px solid var(--border-color);
+    cursor: pointer;
+    font-family: inherit;
+    text-align: left;
+    outline: none;
+    position: relative;
+    z-index: 2;
+}
+
+.card:active {
+    transform: scale(0.99);
+    background-color: #edf2f7;
+}
+
+/* State when accordion is open */
+.card[aria-expanded="true"] {
+    border-color: var(--accent-blue);
+    border-bottom-left-radius: 0;
+    border-bottom-right-radius: 0;
+    box-shadow: none;
+}
+
+.thumb {
+    flex: 0 0 60px;
+    height: 60px;
+    background: #edf2f7;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 1rem;
+}
+
+.thumb i {
+    font-size: 1.5rem;
+    color: var(--primary-blue);
+}
+
+.text {
+    flex: 1;
+}
+
+.text strong {
+    display: block;
+    font-size: 1rem;
+    color: var(--primary-blue);
+    margin-bottom: 0.1rem;
+}
+
+.text span {
+    font-size: 0.85rem;
+    color: #718096;
+    display: block;
+}
+
+.toggle-icon {
+    margin-left: auto;
+    color: #a0aec0;
+    transition: transform 0.3s ease;
+}
+
+.card[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+    color: var(--accent-blue);
+}
+
+/* 4. Optimized Content Panel (Accordion) */
+.content-panel {
+    max-height: 0;
+    overflow: hidden;
+    transition: max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    background: var(--white);
+    border-radius: 0 0 12px 12px;
+    border: 1px solid var(--border-color);
+    border-top: none;
+    margin-top: -1px;
+    padding: 0 1.25rem; /* Vertical padding is 0 when closed */
+}
+
+.content-panel.active {
+    max-height: 1000px; /* Big enough for long lists */
+    padding-bottom: 1.25rem;
+    border-color: var(--accent-blue);
+    margin-bottom: 0.5rem;
+}
+
+/* 5. Resource List Styling */
+.resource-list {
+    list-style: none;
+    padding-top: 0.5rem;
+}
+
+.resource-list li {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 0;
+    border-bottom: 1px solid #edf2f7;
+}
+
+.resource-list li:last-child {
+    border-bottom: none;
+}
+
+.resource-info strong {
+    display: block;
+    color: var(--primary-blue);
+    font-size: 0.95rem;
+}
+
+.resource-info p {
+    font-size: 0.85rem;
+    color: #718096;
+}
+
+.call-btn {
+    background: var(--accent-blue);
+    color: var(--white);
+    padding: 0.6rem 1rem;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.85rem;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+/* 6. Footer */
+.footer-wrap {
+    padding: 2rem 1rem;
+    text-align: center;
+}
+
+.disclaimer {
+    font-size: 0.7rem;
+    color: #a0aec0;
+    margin-bottom: 1rem;
+}
+
+.footer-bottom-row {
+    font-size: 0.75rem;
+    color: #718096;
+    display: flex;
+    justify-content: space-between;
+}
