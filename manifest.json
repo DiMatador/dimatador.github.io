@@ -1,0 +1,24 @@
+{
+    "name": "Calgary Trauma Resource Help",
+    "short_name": "YYC Trauma",
+    "description": "Essential trauma and PTSD resources for Calgary first responders and veterans.",
+    "start_url": "index.html",
+    "display": "standalone",
+    "orientation": "portrait",
+    "background_color": "#f7fafc",
+    "theme_color": "#1a365d",
+    "icons": [
+        {
+            "src": "assets/icons/icon-192.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        },
+        {
+            "src": "assets/icons/icon-512.png",
+            "sizes": "512x512",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
