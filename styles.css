@@ -1,11 +1,12 @@
 /* 1. Variables and Reset */
 :root {
-    --primary-blue: #1a365d;
-    --accent-blue: #2b6cb0;
-    --bg-light: #f7fafc;
-    --text-main: #2d3748;
+    --primary-teal: #479698;     /* Keep for borders/buttons only */
+    --deep-navy: #012d4f;       /* Primary Font Color */
+    --text-muted: #546e7a;      /* Secondary Font Color (Subtext) */
+    --bg-light: #f7fafc; 
     --white: #ffffff;
     --border-color: #e2e8f0;
+    --soft-teal: #f0f7f7;
 }
 
 * {
@@ -17,7 +18,7 @@
 body {
     font-family: 'Poppins', sans-serif;
     background-color: var(--bg-light);
-    color: var(--text-main);
+    color: var(--deep-navy);
     line-height: 1.6;
 }
 
@@ -27,25 +28,49 @@ body {
     padding-bottom: 2rem;
 }
 
+.header-visual {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    background-color: var(--soft-teal);
+    border-radius: 20px; /* Modern "squircle" */
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* This stays empty for now, but creates the "attractive" layout */
+}
+
 /* 2. Header */
 .nav-bar {
-    padding: 2rem 1rem 1rem;
-    background: var(--white);
+    padding: 3rem 1rem 2rem; /* More "breath" at the top */
+    background: linear-gradient(to bottom, var(--soft-teal), var(--white));
     border-bottom: 1px solid var(--border-color);
     text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.nav-bar p {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+    max-width: 80%;
+    margin: 0 auto;
 }
 
 .app-title {
-    font-size: 1.5rem;
+    font-size: 1.75rem; /* Slightly larger */
+    letter-spacing: -0.5px; /* Modern, tighter look */
+    margin-bottom: 0.5rem;
+    color: var(--deep-navy);
     font-weight: 700;
-    color: var(--primary-blue);
+    color: var(--primary-navy);
 }
 
 /* 3. Grid and Cards */
 .grid-container {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.75rem; /* Tighter gap for accordion look */
+    gap: 0.75rem; 
     padding: 1.5rem 1rem;
 }
 
@@ -64,36 +89,53 @@ body {
     text-align: left;
     outline: none;
     position: relative;
+    box-shadow: 0 2px 10px rgba(1, 45, 79, 0.05); /* Very soft navy shadow */
+    border: 1px solid rgba(226, 232, 240, 0.8);
     z-index: 2;
 }
 
 .card:active {
     transform: scale(0.99);
-    background-color: #edf2f7;
+    background-color: var(--soft-teal);
 }
 
-/* State when accordion is open */
-.card[aria-expanded="true"] {
-    border-color: var(--accent-blue);
+/* State when accordion is open - STRUCTURE PRESERVED */
+.card[aria-expanded="true"] .thumb {
+    color: var(--primary-teal); /* Stays teal when open */
+    border-color: var(--primary-teal);
     border-bottom-left-radius: 0;
     border-bottom-right-radius: 0;
     box-shadow: none;
 }
 
+.card[aria-expanded="true"] .toggle-icon {
+    transform: rotate(180deg);
+    color: var(--primary-teal);
+}
+
+.card:hover {
+    transform: scale(1.1); /* Subtle "pop" when you hover/touch the card */
+    box-shadow: 0 4px 15px rgba(1, 45, 79, 0.1);
+    border-color: var(--primary-teal);
+}
+
+/* Thumb (The icon container) */
 .thumb {
-    flex: 0 0 60px;
-    height: 60px;
-    background: #edf2f7;
-    border-radius: 10px;
+    flex: 0 0 50px; /* Slightly narrower since we don't need padding for a box */
+    height: 50px;
+    background: transparent; /* REMOVED the soft-teal background */
+    border-radius: 0;         /* REMOVED the rounded corners */
     display: flex;
     align-items: center;
     justify-content: center;
     margin-right: 1rem;
 }
 
+/* 5. Icon/Toggle remain Teal for visual "Action" cues */
 .thumb i {
-    font-size: 1.5rem;
-    color: var(--primary-blue);
+    font-size: 1.8rem; /* Made slightly larger to compensate for no background */
+    transition: transform 0.3s ease;
+    color: var(--deep-navy);
 }
 
 .text {
@@ -103,13 +145,13 @@ body {
 .text strong {
     display: block;
     font-size: 1rem;
-    color: var(--primary-blue);
+    color: var(--deep-navy);
     margin-bottom: 0.1rem;
 }
 
 .text span {
     font-size: 0.85rem;
-    color: #718096;
+    color: var(--text-muted); /* Softer grey-blue for the description */
     display: block;
 }
 
@@ -119,12 +161,9 @@ body {
     transition: transform 0.3s ease;
 }
 
-.card[aria-expanded="true"] .toggle-icon {
-    transform: rotate(180deg);
-    color: var(--accent-blue);
-}
 
-/* 4. Optimized Content Panel (Accordion) */
+
+/* 4. Optimized Content Panel (Accordion) - STRUCTURE PRESERVED */
 .content-panel {
     max-height: 0;
     overflow: hidden;
@@ -134,13 +173,13 @@ body {
     border: 1px solid var(--border-color);
     border-top: none;
     margin-top: -1px;
-    padding: 0 1.25rem; /* Vertical padding is 0 when closed */
+    padding: 0 1.25rem;
 }
 
 .content-panel.active {
-    max-height: 1000px; /* Big enough for long lists */
+    max-height: 1000px;
     padding-bottom: 1.25rem;
-    border-color: var(--accent-blue);
+    border-color: var(--primary-teal);
     margin-bottom: 0.5rem;
 }
 
@@ -155,7 +194,7 @@ body {
     justify-content: space-between;
     align-items: center;
     padding: 1rem 0;
-    border-bottom: 1px solid #edf2f7;
+    border-bottom: 1px solid var(--soft-teal);
 }
 
 .resource-list li:last-child {
@@ -164,17 +203,17 @@ body {
 
 .resource-info strong {
     display: block;
-    color: var(--primary-blue);
+    color: var(--deep-navy);
     font-size: 0.95rem;
 }
 
 .resource-info p {
     font-size: 0.85rem;
-    color: #718096;
+    color: var(--text-muted); /* Description in muted grey-blue */
 }
 
 .call-btn {
-    background: var(--accent-blue);
+    background: var(--primary-teal);
     color: var(--white);
     padding: 0.6rem 1rem;
     border-radius: 8px;
@@ -184,23 +223,81 @@ body {
     display: inline-flex;
     align-items: center;
     gap: 0.5rem;
+    transition: all 0.2s cubic-bezier(0.4, 0, 0.2, 1);
+    box-shadow: 0 2px 4px rgba(71, 150, 152, 0.2);
+}
+
+.call-btn:hover {
+    background-color: var(--deep-navy); /* Subtle color shift */
+    box-shadow: 0 4px 8px rgba(1, 45, 79, 0.2);
 }
 
 /* 6. Footer */
 .footer-wrap {
-    padding: 2rem 1rem;
+    margin-top: 4rem;
+    padding: 3rem 1.5rem;
+    background-color: var(--deep-navy); /* Solid Navy background */
+    color: var(--white);
+    border-radius: 30px 30px 0 0; /* Soft "hug" at the top */
     text-align: center;
 }
 
-.disclaimer {
-    font-size: 0.7rem;
-    color: #a0aec0;
-    margin-bottom: 1rem;
+.crisis-header {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--primary-teal);
 }
 
-.footer-bottom-row {
-    font-size: 0.75rem;
-    color: #718096;
-    display: flex;
-    justify-content: space-between;
+.crisis-header h3 {
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
+
+.panic-button {
+    display: flex;
+    flex-direction: column;
+    background: var(--white);
+    color: #c53030; /* Emergency Red text on white */
+    padding: 1.25rem;
+    border-radius: 15px;
+    text-decoration: none;
+    font-weight: 700;
+    margin-bottom: 1.5rem;
+    transition: transform 0.2s ease;
+    border: 2px solid transparent;
+}
+
+.panic-button:active {
+    transform: scale(0.97);
+    border-color: var(--primary-teal);
+}
+
+.btn-label { font-size: 0.8rem; text-transform: uppercase; opacity: 0.8; }
+.btn-number { font-size: 2rem; line-height: 1; margin-top: 0.2rem; }
+
+.local-crisis p { font-size: 0.9rem; margin-bottom: 0.2rem; }
+.local-link { 
+    color: var(--primary-teal); 
+    text-decoration: none; 
+    font-weight: 600; 
+    font-size: 1.1rem;
+}
+
+.footer-bottom {
+    margin-top: 3rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.disclaimer {
+    font-size: 0.75rem;
+    line-height: 1.4;
+    opacity: 0.6;
+    margin-bottom: 1.5rem;
+}
+
+.copyright { font-size: 0.7rem; opacity: 0.4; }
