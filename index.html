@@ -11,7 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" crossorigin="anonymous" />
     
-    <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="style/styles.css" />
     <link rel="manifest" href="manifest.json">
     <link rel="apple-touch-icon" href="assets/install_icons/apple-touch-icon.png">
 </head>
@@ -19,174 +19,196 @@
 
     <div class="wrap">
         <header class="nav-bar">
-            <div class="nav-left">
-                <h1 class="app-title">Calgary Trauma Resource Help</h1>
-            </div>
-            <div class="nav-right"></div>
-        </header>
+           <div class=""header-visual"></div>
 
+           <h1 class="app-title">YYC Trauma Resources</h1>
+           <p class="app-subtitle">Essential support for Calgary's first responders and veterans.</p>
+        </header>
         <nav class="main-navigation">
+
+            <!--Resource Cards -->
             <div class="grid-container">
 
-                <button class="card" aria-expanded="false" aria-controls="panel-counseling">
-                    <div class="thumb"><i class="fa-solid fa-life-ring"></i></div>
-                    <div class="text">
-                        <strong>Trauma Counseling</strong>
-                        <span>Find the right Psychologist for you.</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                </button>
-                <div id="panel-counseling" class="content-panel">
-                    <ul class="resource-list">
-                        <li>
-                            <div class="resource-info">
-                                <strong>Psychologists' Association of Alberta</strong>
-                                <p>Referral search for trauma specialists.</p>
-                            </div>
-                            <a href="tel:18884240809" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
-                        </li>
-                    </ul>
+            <button class="card" aria-expanded="false" aria-controls="panel-counseling">
+                <div class="thumb"><i class="fa-solid fa-life-ring"></i></div>
+                <div class="text">
+                    <strong>Trauma Counseling</strong>
+                    <span>Specialized psychologists for PTSD.</span>
                 </div>
-
-                <button class="card" aria-expanded="false" aria-controls="panel-inpatient">
-                    <div class="thumb"><i class="fa-solid fa-hospital"></i></div>
-                    <div class="text">
-                        <strong>Short Term / In-Patient</strong>
-                        <span>Residential and urgent stabilization.</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                </button>
-                <div id="panel-inpatient" class="content-panel">
-                    <ul class="resource-list">
-                        <li>
-                            <div class="resource-info">
-                                <strong>AHS Mental Health Helpline</strong>
-                                <p>24/7 support and intake information.</p>
-                            </div>
-                            <a href="tel:18773032642" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="card" aria-expanded="false" aria-controls="panel-dual">
-                    <div class="thumb"><i class="fa-solid fa-hand-holding-medical"></i></div>
-                    <div class="text">
-                        <strong>Dual Diagnosis</strong>
-                        <span>Trauma and Addiction support.</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                </button>
-                <div id="panel-dual" class="content-panel">
-                    <ul class="resource-list">
-                        <li>
-                            <div class="resource-info">
-                                <strong>Renfrew Recovery Centre</strong>
-                                <p>Detox and residential treatment services.</p>
-                            </div>
-                            <a href="tel:4032973337" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="card" aria-expanded="false" aria-controls="panel-legal">
-                    <div class="thumb"><i class="fa-solid fa-gavel"></i></div>
-                    <div class="text">
-                        <strong>Legal Services</strong>
-                        <span>WCB, Presumptive PTSD, and Employment Law.</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                </button>
-                <div id="panel-legal" class="content-panel">
-                    <ul class="resource-list">
-                        <li>
-                            <div class="resource-info">
-                                <strong>Legal Aid Alberta</strong>
-                                <p>Access to legal advice and representation.</p>
-                            </div>
-                            <a href="tel:18668453425" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="card" aria-expanded="false" aria-controls="panel-family">
-                    <div class="thumb"><i class="fa-solid fa-people-group"></i></div>
-                    <div class="text">
-                        <strong>Family Support</strong>
-                        <span>Resources for spouses and children.</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                </button>
-                <div id="panel-family" class="content-panel">
-                    <ul class="resource-list">
-                        <li>
-                            <div class="resource-info">
-                                <strong>Calgary OSI Clinic - Family Support</strong>
-                                <p>Specialized peer support for families.</p>
-                            </div>
-                            <a href="tel:4032161234" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="card" aria-expanded="false" aria-controls="panel-veteran">
-                    <div class="thumb"><i class="fa-solid fa-medal"></i></div>
-                    <div class="text">
-                        <strong>Veteran / Federal</strong>
-                        <span>VAC and Operational Stress Injury services.</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                </button>
-                <div id="panel-veteran" class="content-panel">
-                    <ul class="resource-list">
-                        <li>
-                            <div class="resource-info">
-                                <strong>Veterans Affairs Canada</strong>
-                                <p>24/7 counseling and support services.</p>
-                            </div>
-                            <a href="tel:18002687708" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
-                        </li>
-                    </ul>
-                </div>
-
-                <button class="card" aria-expanded="false" aria-controls="panel-alternative">
-                    <div class="thumb"><i class="fa-solid fa-flask-vial"></i></div>
-                    <div class="text">
-                        <strong>Alternative Treatments</strong>
-                        <span>Ketamine, Equine, and Innovative care.</span>
-                    </div>
-                    <i class="fa-solid fa-chevron-down toggle-icon"></i>
-                </button>
-                <div id="panel-alternative" class="content-panel">
-                    <ul class="resource-list">
-                        <li>
-                            <div class="resource-info">
-                                <strong>Calgary Equine Therapy</strong>
-                                <p>Non-traditional trauma recovery methods.</p>
-                            </div>
-                            <a href="tel:4035550199" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
-                        </li>
-                    </ul>
-                </div>
-
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </button>
+            <div id="panel-counseling" class="content-panel">
+                <ul class="resource-list">
+                    <li>
+                        <div class="resource-info">
+                            <strong>Psychologists' Assoc. of Alberta</strong>
+                            <p>Search for "Trauma" or "First Responder" specialists.</p>
+                        </div>
+                        <a href="tel:18884240809" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+                    </li>
+                </ul>
             </div>
+
+            <button class="card" aria-expanded="false" aria-controls="panel-inpatient">
+                <div class="thumb"><i class="fa-solid fa-hospital"></i></div>
+                <div class="text">
+                    <strong>Short Term / In-Patient</strong>
+                    <span>Urgent stabilization and crisis beds.</span>
+                </div>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </button>
+            <div id="panel-inpatient" class="content-panel">
+                <ul class="resource-list">
+                    <li>
+                        <div class="resource-info">
+                            <strong>AHS Mental Health Helpline</strong>
+                            <p>24/7 access to local crisis beds and intake.</p>
+                        </div>
+                        <a href="tel:18773032642" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="card" aria-expanded="false" aria-controls="panel-dual">
+                <div class="thumb"><i class="fa-solid fa-hand-holding-medical"></i></div>
+                <div class="text">
+                    <strong>Dual Diagnosis</strong>
+                    <span>Trauma + Addiction recovery.</span>
+                </div>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </button>
+            <div id="panel-dual" class="content-panel">
+                <ul class="resource-list">
+                    <li>
+                        <div class="resource-info">
+                            <strong>AHS Addiction Helpline</strong>
+                            <p>Confidential 24/7 alcohol & drug support.</p>
+                        </div>
+                        <a href="tel:18663322322" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+                    </li>
+                    <li>
+                        <div class="resource-info">
+                            <strong>Renfrew Recovery Centre</strong>
+                            <p>Calgary-based detox and residential intake.</p>
+                        </div>
+                        <a href="tel:4032973337" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="card" aria-expanded="false" aria-controls="panel-legal">
+                <div class="thumb"><i class="fa-solid fa-gavel"></i></div>
+                <div class="text">
+                    <strong>Legal Services</strong>
+                    <span>WCB, Presumptive PTSD & Employment.</span>
+                </div>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </button>
+            <div id="panel-legal" class="content-panel">
+                <ul class="resource-list">
+                    <li>
+                        <div class="resource-info">
+                            <strong>Legal Aid Alberta</strong>
+                            <p>Guidance on WCB claims and employment law.</p>
+                        </div>
+                        <a href="tel:18668453425" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="card" aria-expanded="false" aria-controls="panel-family">
+                <div class="thumb"><i class="fa-solid fa-people-group"></i></div>
+                <div class="text">
+                    <strong>Family Support</strong>
+                    <span>For spouses and children of responders.</span>
+                </div>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </button>
+            <div id="panel-family" class="content-panel">
+                <ul class="resource-list">
+                    <li>
+                        <div class="resource-info">
+                            <strong>Calgary EFAP (AHS)</strong>
+                            <p>Family counseling for frontline staff.</p>
+                        </div>
+                        <a href="tel:4032161234" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="card" aria-expanded="false" aria-controls="panel-veteran">
+                <div class="thumb"><i class="fa-solid fa-medal"></i></div>
+                <div class="text">
+                    <strong>Veteran / Federal</strong>
+                    <span>VAC and OSI clinic access.</span>
+                </div>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </button>
+            <div id="panel-veteran" class="content-panel">
+                <ul class="resource-list">
+                    <li>
+                        <div class="resource-info">
+                            <strong>VAC Assistance Service</strong>
+                            <p>24/7 mental health support for Veterans.</p>
+                        </div>
+                        <a href="tel:18002687708" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button class="card" aria-expanded="false" aria-controls="panel-alternative">
+                <div class="thumb"><i class="fa-solid fa-flask-vial"></i></div>
+                <div class="text">
+                    <strong>Alternative Treatments</strong>
+                    <span>Ketamine, Equine, and Wellness.</span>
+                </div>
+                <i class="fa-solid fa-chevron-down toggle-icon"></i>
+            </button>
+            <div id="panel-alternative" class="content-panel">
+                <ul class="resource-list">
+                    <li>
+                        <div class="resource-info">
+                            <strong>Operational Stress Injury (OSI)</strong>
+                            <p>Ask about specialized treatment programs.</p>
+                        </div>
+                        <a href="tel:4032161234" class="call-btn"><i class="fa-solid fa-phone"></i> Call</a>
+                    </li>
+                </ul>
+            </div>
+
+        </div>
+            <!--End Resource Cards-->
         </nav>
 
         <main id="resources-display"></main>
 
         <footer class="footer-wrap">
-            <div class="footer-emergency"></div>
-            <hr class="footer-divider">
-            <div class="footer-meta">
-                <p class="disclaimer">This App is an independent tool. Not affiliated with government agencies or Official services.</p>
-                <div class="footer-bottom-row">
-                    <span>&copy; 2026 Calgary Trauma Help</span>
-                    <span class="update-text">Updated: <span id="last-mod">Loading...</span></span>
+            <div class="crisis-container">
+                <div class="crisis-header">
+                    <i class="fa-solid fa-hand-holding-hand"></i>
+                    <h3>Immediate Support</h3>
+                </div>
+                
+                <a href="tel:988" class="panic-button">
+                    <span class="btn-label">National Suicide Crisis</span>
+                    <span class="btn-number">9-8-8</span>
+                </a>
+
+                <div class="local-crisis">
+                    <p>Local: <strong>Distress Centre Calgary</strong></p>
+                    <a href="tel:4032664357" class="local-link">403-266-HELP (4357)</a>
                 </div>
             </div>
+
+            <div class="footer-bottom">
+                <p class="disclaimer">Professional resource directory for YYC responders. In an immediate emergency, always dial 9-1-1.</p>
+                <p class="copyright">&copy; 2026 YYC Trauma Resources • <span id="last-mod"></span></p>
+            </div>
         </footer>
+
     </div>
 
-    <script src="app.js?v=1"></script>
+    <script src="js/app.js?v=1"></script>
     <script>
         if ('serviceWorker' in navigator) {
             window.addEventListener('load', () => {
